@@ -1,0 +1,58 @@
+{
+	"name": "electron-react-app",
+	"version": "0.1.0",
+	"description": "A minimal React and Electron application",
+	"author": "Josh Chalcraft",
+	"main": "public/electron.js",
+	"build": {
+		"appId": "react.electron"
+	},
+	"homepage": "./",
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.11.2",
+		"@microsoft/microsoft-graph-client": "^2.0.0",
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.4.1",
+		"@testing-library/user-event": "^7.2.1",
+		"bootstrap": "^4.4.1",
+		"cross-env": "^7.0.0",
+		"electron-is-dev": "^1.1.0",
+		"moment": "^2.24.0",
+		"msal": "^1.1.3",
+		"react": "^16.13.0",
+		"react-dom": "^16.13.0",
+		"react-router-dom": "^5.1.2",
+		"react-scripts": "3.4.0",
+		"reactstrap": "^8.1.1"
+	},
+	"scripts": {
+		"react-start": "react-scripts start",
+		"react-build": "react-scripts build",
+		"react-test": "react-scripts test",
+		"react-eject": "react-scripts eject",
+		"electron-build": "electron-builder",
+		"build": "npm run react-build && npm run electron-build",
+		"start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"concurrently": "^5.1.0",
+		"electron": "^8.1.0",
+		"electron-builder": "^22.3.6",
+		"wait-on": "^4.0.1"
+	}
+}
